@@ -1,11 +1,14 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
 android {
     namespace 'com.dosbots.arch'
     compileSdk 33
+
+    group = 'com.github.dosbots'
 
     defaultConfig {
         minSdk 23
