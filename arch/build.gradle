@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.dosbots'
-version = '1.0.4'
+version = '1.0.5'
 
 android {
     namespace 'com.dosbots.arch'
@@ -44,15 +44,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.dosbots'
+            artifactId = 'architecture-android'
+            version = '1.0.5'
+
+            afterEvaluate {
                 from components.release
-                groupId = 'com.github.dosbots'
-                artifactId = 'architecture-android'
-                version = '1.0.4'
             }
         }
     }
