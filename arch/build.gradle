@@ -52,7 +52,7 @@ publishing {
             }
             groupId = 'com.github.dosbots'
             artifactId = 'architecture-android'
-            version = '1.0.6'
+            version = '1.0.7'
         }
     }
 }
