@@ -4,8 +4,8 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.Dos-bots'
-version = '1.0.3'
+group = 'com.github.dosbots'
+version = '1.0.4'
 
 android {
     namespace 'com.dosbots.arch'
@@ -50,9 +50,9 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.Dos-bots'
+                groupId = 'com.github.dosbots'
                 artifactId = 'architecture-android'
-                version = '1.0.3'
+                version = '1.0.4'
             }
         }
     }
