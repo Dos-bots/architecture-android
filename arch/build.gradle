@@ -4,9 +4,6 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.dosbots'
-version = '1.0.5'
-
 android {
     namespace 'com.dosbots.arch'
     compileSdk 33
@@ -32,6 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+    publishing {
+        singleVariant("release")
+    }
 }
 
 dependencies {
@@ -49,7 +49,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.dosbots'
             artifactId = 'architecture-android'
-            version = '1.0.5'
+            version = '1.0.6'
 
             afterEvaluate {
                 from components.release
