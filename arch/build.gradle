@@ -47,13 +47,12 @@ dependencies {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.github.dosbots'
-            artifactId = 'architecture-android'
-            version = '1.0.6'
-
             afterEvaluate {
                 from components.release
             }
+            groupId = 'com.github.dosbots'
+            artifactId = 'architecture-android'
+            version = '1.0.6'
         }
     }
 }
