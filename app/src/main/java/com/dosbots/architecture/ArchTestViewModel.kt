@@ -1,7 +1,9 @@
 package com.dosbots.architecture
 
+import androidx.lifecycle.viewModelScope
 import com.dosbots.arch.MVIViewModel
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ArchTestViewModel :
     MVIViewModel<ArchTestUserAction, ArchTestUiEvent, ArchTestUiState>(ArchTestUiState()) {
@@ -21,7 +23,7 @@ class ArchTestViewModel :
     }
 
     private fun fetchSomeData() {
-        runCoroutine {
+        viewModelScope.launch {
             updateState { copy(loading = true) }
             delay(2000)
             updateState {
