@@ -22,15 +22,11 @@ abstract class MVIViewModel<Action : UserAction, Event : UiEvent, State : UiStat
     }
 
     protected fun updateState(newStateBuilder: State.() -> State) {
-        _uiState.value = _uiState.value.newStateBuilder()
+        _uiState.update(newStateBuilder)
     }
 
     protected fun emitEvent(newEventBuilder: () -> Event) {
         viewModelScope.launch { _uiEvent.send(newEventBuilder()) }
-    }
-
-    protected fun runCoroutine(task: suspend () -> Unit) {
-        viewModelScope.launch { task() }
     }
 
     protected abstract fun handleUserAction(action: Action, currentState: State)
